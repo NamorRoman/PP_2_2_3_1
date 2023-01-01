@@ -10,34 +10,37 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements UserService {
 
-    UserDao userDao;
+    private UserDao userDao;
 
     public UserServiceImpl(UserDao userDao) {
         this.userDao = userDao;
     }
 
     @Override
-    @Transactional
+//    @Transactional
     public List<User> getAllUsers() {
         return userDao.getAllUsers();
     }
 
     @Override
-    public User getUser(long id) {
+    public User getUser(Long id) {
         return userDao.getUser(id);
     }
 
    @Override
    @Transactional
-    public void updateUser(long id, User user) {
-        userDao.updateUser(id, user);
+    public void updateUser(Long id, User user) {
+        User updatedUser = getUser(id);
+        updatedUser.setName(user.getName());
+        updatedUser.setLastName(user.getLastName());
+        updatedUser.setAge(user.getAge());
+        userDao.updateUser(updatedUser);
     }
 
     @Override
     @Transactional
-    public void deleteUser(long id) {
+    public void deleteUser(Long id) {
         userDao.deleteUser(id);
-
     }
 
     @Override
