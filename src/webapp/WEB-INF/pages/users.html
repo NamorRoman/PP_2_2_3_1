@@ -23,10 +23,7 @@
         <td th:text="${user.getName()}"/>
         <td th:text="${user.getLastName()}"/>
         <td th:text="${user.getAge()}"/>
-        <td>
-            <a th:href="@{/users/{id}/editUser(id=${user.getId()})}"
-               th:text="'Edit user'"/></a>
-        </td>
+
         <td>
         </td>
 </table>
@@ -37,10 +34,6 @@
 <body>
 
 
-<!--<td>-->
-<!--    <a th:href="@{/users/{id}(id=${user.getId()})}"-->
-<!--       th:text="${user.getId()}"/></a>-->
-<!--</td>-->
 
 
 
