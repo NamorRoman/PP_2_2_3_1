@@ -13,6 +13,7 @@ public class User {
     @Column(name = "id")
     private Long id;
 
+
     @Column(name = "name")
     private String name;
 
@@ -32,7 +33,11 @@ public class User {
 
     }
 
-    public long getId() {
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
         return id;
     }
 
